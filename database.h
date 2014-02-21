@@ -200,7 +200,8 @@ public:
             string e;
             int p;
 
-            cin >> e;
+           // cin >> e;
+            getline(cin,e);
             char c[e.size()];
 
             for(unsigned int i=0; i<sizeof(c); i++)
@@ -248,7 +249,8 @@ public:
         cout << "\n\n\n";
 
         cout << "Bitte gib eine passende Nr. ein\n";
-        cin >> eingabe;
+        getline(cin,eingabe);
+      //  cin >> eingabe;
         for(int i=0; i<eingabe.size(); i++)
         {
             if(isdigit(eingabe[i]))
@@ -292,13 +294,15 @@ public:
                 string eingabe3;
                 string eingabe4;
 
-                cin >> eingabe2;
+             //   cin >> eingabe2;
+                getline(cin,eingabe2);
 
                 switch(eingabe2[0])
                 {
                 case '1':
                     cout << "Bitte gib den neuen Namen des Titels ein:\n";
-                    cin >> eingabe2;
+                   // cin >> eingabe2;
+                    getline(cin,eingabe2);
 
                     eingabe3.append("UPDATE Serien SET Titel = '");
                     eingabe3.append(eingabe2);
@@ -342,7 +346,8 @@ public:
                     break;
                 case '3':
                     cout << "Bitte gib den neuen Titel ein\n";
-                    cin >> eingabe2;
+                  //  cin >> eingabe2;
+                    getline(cin,eingabe2);
                     cout << "Bitte gib die neue Anzahl der Punkte ein:\n";
                     eingabe3.append("UPDATE Serien Set Titel= '");
                     eingabe3.append(eingabe2);
@@ -396,12 +401,13 @@ public:
         Lstringeingabe.append(",'");
 
         cout << "\nBitte gib den Namen der Serie ein:\n";
-        cin >> temp;
-        cout << "Und nun die Anzahl der Punkte bitte:\n";
-
-
+        getline(std::cin, temp);
+       // cin >> temp;
         Lstringeingabe.append(temp);
         Lstringeingabe.append("',");
+
+        cout << "Und nun die Anzahl der Punkte bitte:\n";
+
         Lstringeingabe.append(punkteingabe());
         Lstringeingabe.append(")");
 
@@ -430,7 +436,8 @@ public:
         int ergebnis = 0;
 
         string eingabe;
-        cin >> eingabe;
+        // cin >> eingabe;
+        getline(cin,eingabe);
 
 
 

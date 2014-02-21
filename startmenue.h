@@ -64,7 +64,8 @@ public:
 
 
         string eingabe;
-        cin >> eingabe;
+        getline(cin,eingabe);
+
         cout << endl;
         if(eingabe[0] == '1' || eingabe[0] == '2' || eingabe[0] == '3' ||eingabe[0] == '4' || eingabe[0] == '5')
         {
