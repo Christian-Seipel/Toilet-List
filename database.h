@@ -144,6 +144,25 @@ public:
         }
     } // open_database ende
 
+    string titeleingabe(){
+        string a;
+        bool w = false;
+        while(w == false){
+            getline(cin,a);
+            w = true;
+            for(int i=0; i<a.size();i++){
+                if(a[i] == '\''){
+                    w = false;
+                }
+            }
+            if(w == false){
+                cout << "Bitte verwende keine --> ' <--\n";
+            }
+
+        }
+        return a;
+    }
+
     void select()
     {
         sql = "SELECT * from Serien WHERE Titel IS NOT NULL";
@@ -302,10 +321,10 @@ public:
                 case '1':
                     cout << "Bitte gib den neuen Namen des Titels ein:\n";
                    // cin >> eingabe2;
-                    getline(cin,eingabe2);
+                    //getline(cin,eingabe2);
 
                     eingabe3.append("UPDATE Serien SET Titel = '");
-                    eingabe3.append(eingabe2);
+                    eingabe3.append(titeleingabe());
                     eingabe3.append("'WHERE SerienID =");
                     eingabe3.append(eingabe);
 
@@ -347,10 +366,10 @@ public:
                 case '3':
                     cout << "Bitte gib den neuen Titel ein\n";
                   //  cin >> eingabe2;
-                    getline(cin,eingabe2);
-                    cout << "Bitte gib die neue Anzahl der Punkte ein:\n";
+                //    getline(cin,eingabe2);
                     eingabe3.append("UPDATE Serien Set Titel= '");
-                    eingabe3.append(eingabe2);
+                    eingabe3.append(titeleingabe());
+                    cout << "Bitte gib die neue Anzahl der Punkte ein:\n";
                     eingabe3.append("', Punkte =");
                     eingabe3.append(punkteingabe());
                     eingabe3.append(" WHERE SerienID =");
@@ -401,9 +420,12 @@ public:
         Lstringeingabe.append(",'");
 
         cout << "\nBitte gib den Namen der Serie ein:\n";
-        getline(std::cin, temp);
+
+
+       // getline(std::cin, temp);
        // cin >> temp;
-        Lstringeingabe.append(temp);
+       // Lstringeingabe.append(temp);
+       Lstringeingabe.append(titeleingabe());
         Lstringeingabe.append("',");
 
         cout << "Und nun die Anzahl der Punkte bitte:\n";
