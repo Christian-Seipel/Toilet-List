@@ -1,3 +1,3 @@
-g++ main.cpp -lsqlite3 -o Toilet_List
+g++ -ansi -lsqlite3 -o Toilet_List  main.cpp
  
 
