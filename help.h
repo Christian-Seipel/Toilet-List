@@ -1,5 +1,5 @@
 /*
-Toilet List Version 0.01B
+Toilet List Version 0.01.001B
 Author: Christian Seipel c.seipel@gmx.de
 
 Copyright 2014 Christian Seipel
@@ -18,8 +18,8 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Toilet List.  If not, see <http://www.gnu.org/licenses/>.
-
 */
+
 
 #ifndef HELP_H_INCLUDED
 #define HELP_H_INCLUDED
