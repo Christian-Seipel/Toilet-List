@@ -1,5 +1,5 @@
 /*
-Toilet List Version 0.01.001B
+Toilet List Version 0.01.004.1B
 Author: Christian Seipel c.seipel@gmx.de
 
 Copyright 2014 Christian Seipel
@@ -19,6 +19,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Toilet List.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 
 
 #ifndef DATABASE_H_INCLUDED
@@ -73,7 +74,7 @@ public:
     {
 
 
-        uebergabe.push_back(argv[0]); // HIER MÜSSTE DER FEHLER SEIN
+        uebergabe.push_back(argv[0]);
         iuebergabe.push_back(argv[1]);
         puebergabe.push_back(argv[2]);
         return 0;
@@ -81,7 +82,7 @@ public:
 
     void get_liste()
     {
-        for(unsigned int i=0; i < uebergabe.size(); i++) // HIER MÜSSTE DER FEHLER  SEIN
+        for(unsigned int i=0; i < uebergabe.size(); i++)
         {
             cout <<"SerienID = " << uebergabe[i] << "\nTitel = " << iuebergabe[i] << "\nPunkte = " << puebergabe[i] << "\n\n";
         }
@@ -104,11 +105,11 @@ public:
 
 
         FILE *datei;
-        datei=fopen("test.db","r");
+        datei=fopen(".Toilet_List.db","r");
         if(datei == NULL)
             {
 
-            rc = sqlite3_open("test.db", &db);
+            rc = sqlite3_open(".Toilet_List.db", &db);
             if( rc )
             {
                 cout << "Neu erstellte Datenbank kann nicht geöffnet werden: " << sqlite3_errmsg(db);
@@ -129,7 +130,7 @@ public:
             } // if
         else
         {
-            rc = sqlite3_open("test.db", &db);
+            rc = sqlite3_open(".Toilet_List.db", &db);
             if( rc )
             {
                 cout << "Datenbank kann nicht geöffnet werden: " << sqlite3_errmsg(db);
@@ -248,7 +249,7 @@ public:
 
                 if(p<0 || p>10)
                 {
-                    cout << "\n\nBitte gib eine Zahl von 0 bis 10 ein:\n";
+                    cout << "\n\nBitte gib eine Ganzzahl von 0 bis 10 ein:\n";
                 }
                 else
                 {
@@ -308,7 +309,7 @@ public:
             }
             else
             {
-                cout << "Willst du 1. Titel, 2. Punkte oder 3. beides bearbeiten?\n";
+                cout << "Willst du \n1. Titel\n2. Punkte oder\n3. beides bearbeiten?\n";
                 string eingabe2;
                 string eingabe3;
                 string eingabe4;

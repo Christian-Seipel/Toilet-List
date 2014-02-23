@@ -1,5 +1,5 @@
 /*
-Toilet List Version 0.01.001B
+Toilet List Version 0.01.004.1B
 Author: Christian Seipel c.seipel@gmx.de
 
 Copyright 2014 Christian Seipel
@@ -39,11 +39,12 @@ vector <string>Ddatabase::puebergabe;
 
 int main(int argc, char* argv[])
 {
+ /*
     help hilfe(argc,argv);
     if(hilfe.rueckzug() == 1)
     {
         return 1;
-    };
+    }; */
 
     Ddatabase anime;
     anime.open_database();
